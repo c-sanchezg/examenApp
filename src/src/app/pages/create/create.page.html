@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>create your acccount</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="avatar">
+    <ion-avatar (click)="uploadAvatar()">
+      <img *ngIf="profile?.image; else placeholder_avatar;" [src]="profile.image" />
+      <ng-template #placeholder_avatar>
+      </ng-template>
+    </ion-avatar>
+  </div>
+  <div class="container">
+    <label>
+      Nombre:
+      <ion-input type="text" [(ngModel)]="usuario.name"></ion-input>
+    </label>
+  <label>
+    Apellido:
+    <ion-input type="text" [(ngModel)]="usuario.lastname"></ion-input>
+  </label>
+  <label>
+    Genero:
+    <ion-input type="text" [(ngModel)]="usuario.gender"></ion-input>
+  </label>
+  <label>
+      Edad:
+      <ion-input type="text" [(ngModel)]="usuario.age"></ion-input>
+    </label>
+  <label>
+      image:
+     <ion-avatar (click)="uploadAvatar()">
+        <ion-icon name="images"></ion-icon>
+      </ion-avatar>
+      <ion-input type="text" [(ngModel)]="usuario.image"></ion-input>
+    </label>
+  </div>
+
+  <ion-button expand="block" color="success" (click)="addUsuario()">
+    <ion-icon name="save" slot="start">Guardar</ion-icon>
+  </ion-button>
+
+</ion-content>

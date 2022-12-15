@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card>
+      <ion-item lines="none">
+        <ion-text color="medium">
+          <p>Fecha de hoy: </p>
+        </ion-text>
+        <ion-label color="medium" slot="end">{{todayDate | date: "EEE dd MMM"}}</ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-text color="medium">
+          <p>
+            Clima de hoy
+          </p>
+        </ion-text>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-text color="medium">
+          <p>
+            Temperatura: {{weathertemp}} °C
+          </p>
+        </ion-text>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-text color="medium">
+          <p>Comuna: {{cityname}}</p>
+        </ion-text>
+        <ion-icon name="location"></ion-icon>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-text color="medium">
+          <p>Detalle del clima: {{weatherdetail}}</p>
+        </ion-text>
+        <ion-icon name="partly-sunny"></ion-icon>
+      </ion-item>
+  
+      <ion-button color="warning" (click)="obtenerClima()">Usar mi ubicacion</ion-button>
+    </ion-card>
+  </div>
+</ion-content>

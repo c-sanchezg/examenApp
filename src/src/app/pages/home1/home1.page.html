@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-text color="medium">
+        <p>Fecha de hoy: </p>
+      </ion-text>
+      <ion-label color="medium" slot="end">{{todayDate | date: "EEE dd MMM"}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-text color="medium">
+        <p>
+          Clima de hoy
+        </p>
+      </ion-text>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-text color="medium">
+        <p>
+          Temperatura: {{weathertemp}} °C
+        </p>
+      </ion-text>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-text color="medium">
+        <p>Comuna: {{cityname}}</p>
+      </ion-text>
+      <ion-icon name="location"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-text color="medium">
+        <p>Detalle del clima: {{weatherdetail}}</p>
+      </ion-text>
+      <ion-icon name="partly-sunny"></ion-icon>
+    </ion-item>
+
+    <ion-button color="warning" (click)="obtenerClima()">Usar mi ubicacion</ion-button>
+  </ion-card>
+  
+  <ion-card>
+    <h3 class="h3evo">Una aplicacion que ayudara a reducir tiempos en salas de clases. Por favor genere qr</h3>
+    <img src="../../../assets/Negro con Dorado Círculo Inmobiliaria Logo.svg" alt="">
+    <ion-button color= "warning" shape="block"  (click)="GenerarQR()" *ngIf="rol == 'profesor' ">Generar QR </ion-button>
+    <ion-button color= "warning" shape="block"  (click)="uploadAvatar()" *ngIf="rol == 'alumno' ">Escanear QR </ion-button>
+  </ion-card>
+  
+</ion-content>
+
